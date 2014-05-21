@@ -10,7 +10,7 @@ app.use(require('body-parser')());
 
 app.get('/', function (req, res) {
   res.send([
-    '<form method="post" style="width:500px;" action="/">',
+    '<form method="post" style="width:500px;margin:60px auto 0;" action="/">',
     '<fieldset style="display:block;padding:5px;">',
     '<label for="email" style="width:100px;">To:</label><br>',
     '<input type="text" name="email" placeholder="text@example.com">',
@@ -34,7 +34,7 @@ app.post('/', function (req, res) {
     from: 'test@example.com',
     subject: req.body.subject,
     text: req.body.message
-  }, function (err, result) {
+  }, function (err) {
       if (err) {
         return res.send('Invalid format.');
       }
